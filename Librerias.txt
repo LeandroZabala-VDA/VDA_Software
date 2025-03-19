@@ -1,0 +1,6 @@
+pip install pyserial
+pip install websocket-client
+pip install matplotlib
+
+comando
+pyuic5 -x Test_designer.ui -o ui2.py
