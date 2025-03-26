@@ -38,7 +38,7 @@ class MainApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.update_ports()
 
         # Establece un baudrate de 1M baudios por defecto
-        self.TextEdit_BaudRate.setPlainText("1000000")
+        self.TextEdit_BaudRate.setPlainText("115200")
         
         # Se inicializa en modo de NO grabación en archivo
         self.acquiring = False
@@ -110,12 +110,12 @@ class MainApp(QtWidgets.QMainWindow, Ui_MainWindow):
 
     def start_plotting(self):
         # Inicia la graficación de datos - Actualiza la máquina de estados
-        self.serial_handler.send_data("START\n")      
+        self.serial_handler.send_data("ASTARTZ\n")      
         self.plot_manager.start_animation(self.update_plot)
 
     def stop_plotting(self):
         # Detiene la graficación de datos - Actualiza la máquina de estados
-        self.serial_handler.send_data("STOP\n")
+        self.serial_handler.send_data("ASTOPZ\n")
 
         self.plot_manager.stop_animation()
         self.statusbar.showMessage('Adquisición detenida.')

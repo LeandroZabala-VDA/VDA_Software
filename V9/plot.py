@@ -37,7 +37,7 @@ class PlotManager:
         """Configura los parámetros iniciales del gráfico."""
         # Establece los límites de los ejes
         self.ax.set_xlim(0, self.max_points - 1)
-        self.ax.set_ylim(0, 1023)
+        self.ax.set_ylim(0, 65536)
         self.init_plot()
 
     def init_plot(self):
