@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'Test_designer_V7.ui'
+# Form implementation generated from reading ui file 'Test_designer_V9.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.10
 #
@@ -98,6 +98,9 @@ class Ui_mainWindow(object):
         self.btn_Adquirir = QtWidgets.QPushButton(self.frame_3)
         self.btn_Adquirir.setObjectName("btn_Adquirir")
         self.verticalLayout.addWidget(self.btn_Adquirir)
+        self.checkBox_AGC = QtWidgets.QCheckBox(self.frame_3)
+        self.checkBox_AGC.setObjectName("checkBox_AGC")
+        self.verticalLayout.addWidget(self.checkBox_AGC)
         self.hboxlayout.addWidget(self.frame_3)
         self.frame_4 = QtWidgets.QFrame(self.frame_5)
         self.frame_4.setMinimumSize(QtCore.QSize(200, 33))
@@ -156,8 +159,9 @@ class Ui_mainWindow(object):
         mainWindow.setWindowTitle(_translate("mainWindow", "VDA Plotter"))
         self.lbl_Titulo.setText(_translate("mainWindow", "VDA - LABI"))
         self.btn_Puerto.setText(_translate("mainWindow", "Abrir Puerto"))
-        self.btn_Start.setText(_translate("mainWindow", "Start"))
+        self.btn_Start.setText(_translate("mainWindow", "Inicio"))
         self.btn_Adquirir.setText(_translate("mainWindow", "Adquirir"))
+        self.checkBox_AGC.setText(_translate("mainWindow", "Control Automático de Ganancia"))
         self.lbl_BaudRate.setText(_translate("mainWindow", "BaudRate"))
         self.label_COM.setText(_translate("mainWindow", "Puerto COM"))
         self.comboBox_Time.setItemText(0, _translate("mainWindow", "500"))

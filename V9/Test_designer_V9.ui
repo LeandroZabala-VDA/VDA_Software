@@ -196,7 +196,7 @@
           <item>
            <widget class="QPushButton" name="btn_Start">
             <property name="text">
-             <string>Start</string>
+             <string>Inicio</string>
             </property>
            </widget>
           </item>
@@ -204,6 +204,13 @@
            <widget class="QPushButton" name="btn_Adquirir">
             <property name="text">
              <string>Adquirir</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QCheckBox" name="checkBox_AGC">
+            <property name="text">
+             <string>Control Automático de Ganancia</string>
             </property>
            </widget>
           </item>

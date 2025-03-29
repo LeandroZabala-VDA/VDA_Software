@@ -30,6 +30,7 @@ class MainApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.btn_Puerto.clicked.connect(self.toggle_port)
         self.btn_Start.clicked.connect(self.toggle_start_stop)
         self.btn_Adquirir.clicked.connect(self.toggle_acquire_data)
+        self.checkBox_AGC.stateChanged.connect(self.toggle_agc)
         
         # Configuración del temporizador para actualizar la lista de puertos
         self.timer = QtCore.QTimer(self)
@@ -55,22 +56,26 @@ class MainApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.btn_Puerto.setEnabled(True)
             self.btn_Start.setEnabled(False)
             self.btn_Adquirir.setEnabled(False)
+            self.checkBox_AGC.setEnabled(False)
         elif state == "Puerto Abierto":
             self.btn_Puerto.setText("Cerrar Puerto")
             self.btn_Start.setText("Start")
             self.btn_Puerto.setEnabled(True)
             self.btn_Start.setEnabled(True)
             self.btn_Adquirir.setEnabled(False)
+            self.checkBox_AGC.setEnabled(False)
         elif state == "Graficando":
             self.btn_Start.setText("Stop")
             self.btn_Puerto.setEnabled(False)
             self.btn_Start.setEnabled(True)
             self.btn_Adquirir.setEnabled(True)
+            self.checkBox_AGC.setEnabled(True)
         elif state == "Adquiriendo":
             self.btn_Start.setText("Stop")
             self.btn_Puerto.setEnabled(False)
             self.btn_Start.setEnabled(False)
             self.btn_Adquirir.setEnabled(True)
+            self.checkBox_AGC.setEnabled(False)
 
     def toggle_port(self):
         # Abre o cierra el puerto serial
@@ -85,6 +90,8 @@ class MainApp(QtWidgets.QMainWindow, Ui_MainWindow):
             baud_rate = int(self.TextEdit_BaudRate.toPlainText())
             if self.serial_handler.open_serial_port(port, baud_rate):
                 self.update_ui_state("Puerto Abierto")
+                time.sleep(0.5)
+                self.serial_handler.send_data("ARESETZ\n")  # Enviar comando al abrir el puerto
                 self.timer.stop()
                 self.serial_handler.clear_buffers()
 
@@ -120,6 +127,14 @@ class MainApp(QtWidgets.QMainWindow, Ui_MainWindow):
         self.plot_manager.stop_animation()
         self.statusbar.showMessage('Adquisición detenida.')
 
+    def toggle_agc(self):
+        if self.checkBox_AGC.isChecked():  # Si está marcado
+           self.serial_handler.send_data("AAGCONZ\n")  # Enviar el comando para encender AGC
+           self.statusbar.showMessage('Control automatico de ganancia encendido.')
+        else:  # Si no está marcado
+           self.serial_handler.send_data("AAGCOFFZ\n")  # Enviar el comando para apagar AGC
+           self.statusbar.showMessage('Control automatico de ganancia apagado.')
+
     def closeEvent(self, event):
         self.serial_handler.close_serial_port()
         if self.acquiring:
@@ -152,6 +167,7 @@ class MainApp(QtWidgets.QMainWindow, Ui_MainWindow):
         # Inicia o detiene la adquisición de datos a un archivo - Actualiza la máquina de estados
         if self.acquiring:
             self.acquiring = False
+            self.serial_handler.send_data("ASTOPZ\n")  # Enviar comando al detener adquisición
             self.btn_Adquirir.setText("Adquirir")
             self.update_ui_state("Graficando")
             self.data_acquisition.close_file()
@@ -159,7 +175,7 @@ class MainApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.acquiring = True
             #thread = threading.Thread(target=start_websocket_client, args=(self.websocket_client,), daemon=True)
             #thread.start()
-            
+            self.serial_handler.send_data("AACQZ\n")
             self.data_acquisition.start_acquire_data(self)
             self.update_ui_state("Adquiriendo")
             self.btn_Adquirir.setText("Detener Adquisición")
