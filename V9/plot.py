@@ -85,7 +85,7 @@ class PlotManager:
         self.init_plot()
         self.canvas.draw()
 
-class MainApp(QtWidgets.QMainWindow, Ui_mainWindow):
+class PlotApp(QtWidgets.QMainWindow, Ui_mainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -101,9 +101,9 @@ class MainApp(QtWidgets.QMainWindow, Ui_mainWindow):
         value = int(self.comboBox_Time.currentText())
         self.plot_manager.set_max_points(value)
 
-if __name__ == "__main__":
-    import sys
-    app = QtWidgets.QApplication(sys.argv)
-    mainWindow = MainApp()
-    mainWindow.show()
-    sys.exit(app.exec_())
+# if __name__ == "__main__":
+#     import sys
+#     app = QtWidgets.QApplication(sys.argv)
+#     mainWindow = MainApp()
+#     mainWindow.show()
+#     sys.exit(app.exec_())

@@ -1,5 +1,5 @@
 ('C:\\Users\\leank\\OneDrive - tresdimensiones\\Documentos\\LZ-05 VDA\\Python '
- 'GUI\\VDA\\V7\\build\\main\\PYZ-00.pyz',
+ 'GUI\\VDA\\git\\V9\\build\\main\\PYZ-00.pyz',
  [('PIL',
    'C:\\Users\\leank\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\site-packages\\PIL\\__init__.py',
    'PYMODULE'),
@@ -470,7 +470,7 @@
    'PYMODULE'),
   ('data_acquisition',
    'C:\\Users\\leank\\OneDrive - tresdimensiones\\Documentos\\LZ-05 '
-   'VDA\\Python GUI\\VDA\\V7\\data_acquisition.py',
+   'VDA\\Python GUI\\VDA\\git\\V9\\data_acquisition.py',
    'PYMODULE'),
   ('dataclasses',
    'C:\\Users\\leank\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\dataclasses.py',
@@ -528,7 +528,7 @@
    'PYMODULE'),
   ('decoder',
    'C:\\Users\\leank\\OneDrive - tresdimensiones\\Documentos\\LZ-05 '
-   'VDA\\Python GUI\\VDA\\V7\\decoder.py',
+   'VDA\\Python GUI\\VDA\\git\\V9\\decoder.py',
    'PYMODULE'),
   ('difflib',
    'C:\\Users\\leank\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\difflib.py',
@@ -1693,7 +1693,7 @@
    'PYMODULE'),
   ('plot',
    'C:\\Users\\leank\\OneDrive - tresdimensiones\\Documentos\\LZ-05 '
-   'VDA\\Python GUI\\VDA\\V7\\plot.py',
+   'VDA\\Python GUI\\VDA\\git\\V9\\plot.py',
    'PYMODULE'),
   ('pprint',
    'C:\\Users\\leank\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\pprint.py',
@@ -1805,7 +1805,7 @@
    'PYMODULE'),
   ('serial_handler',
    'C:\\Users\\leank\\OneDrive - tresdimensiones\\Documentos\\LZ-05 '
-   'VDA\\Python GUI\\VDA\\V7\\serial_handler.py',
+   'VDA\\Python GUI\\VDA\\git\\V9\\serial_handler.py',
    'PYMODULE'),
   ('shlex',
    'C:\\Users\\leank\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\shlex.py',
@@ -1872,7 +1872,7 @@
    'PYMODULE'),
   ('ui2',
    'C:\\Users\\leank\\OneDrive - tresdimensiones\\Documentos\\LZ-05 '
-   'VDA\\Python GUI\\VDA\\V7\\ui2.py',
+   'VDA\\Python GUI\\VDA\\git\\V9\\ui2.py',
    'PYMODULE'),
   ('unittest',
    'C:\\Users\\leank\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\unittest\\__init__.py',
@@ -1969,7 +1969,7 @@
    'PYMODULE'),
   ('wsclient',
    'C:\\Users\\leank\\OneDrive - tresdimensiones\\Documentos\\LZ-05 '
-   'VDA\\Python GUI\\VDA\\V7\\wsclient.py',
+   'VDA\\Python GUI\\VDA\\git\\V9\\wsclient.py',
    'PYMODULE'),
   ('xml',
    'C:\\Users\\leank\\AppData\\Local\\Programs\\Python\\Python312\\Lib\\xml\\__init__.py',
