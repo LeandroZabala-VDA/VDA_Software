@@ -10,7 +10,7 @@ Be sure to switch to the `V9` branch before running the software with the latest
 
 ## 📷 GUI Preview
 
-![GUI Screenshot](screenshot.png)
+![GUI Screenshot](Screenshot.png)
 
 ## 💡 Features
 
