@@ -108,7 +108,7 @@ class MainApp(QtWidgets.QMainWindow, Ui_MainWindow):
             self.btn_Puerto.setEnabled(True)
             self.btn_Start.setEnabled(False)
             self.btn_Adquirir.setEnabled(False)
-            self.btn_Adquirir.setText("Adquirir")  # Asegurar que el texto del botón sea correcto
+            self.btn_Adquirir.setText("Adquirir")
             self.checkBox_AGC.setEnabled(False)
             # Resetear el checkbox de AGC
             self.checkBox_AGC.setChecked(False)
