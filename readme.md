@@ -24,6 +24,12 @@ Be sure to switch to the `V9` branch before running the software with the latest
   - Adjusting time base for visualization
 - State machine to manage control availability based on system state
 
+## 🛡 License
+
+This software is released under the MIT License.
+
+📌 **Non-commercial use only**: While the code is freely available for academic and personal use, **commercial use is not permitted** without prior written authorization from the author.
+
 ## 📬 Contact
 
 For questions, suggestions or collaboration, feel free to open an issue or contact me.
